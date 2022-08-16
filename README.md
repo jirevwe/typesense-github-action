@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This GitHub Action starts a Typesense stand-alone server on the default port `8108`.
+This GitHub Action starts a [Typesense](https://github.com/typesense/typesense) stand-alone server on the default port `8108`.
 
 ## Usage
 
