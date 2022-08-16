@@ -1,0 +1,33 @@
+name: "Typesense Server in GitHub Actions"
+description: "Start a Typesense server"
+
+branding:
+  icon: "search"
+  color: "red"
+
+inputs:
+  typesense-version:
+    description: "typesense version to use"
+    required: false
+    default: "0.23.1"
+  typesense-port:
+    description: "typesense port to use and expose"
+    required: false
+    default: 8108
+  typesense-container-name:
+    description: "Name of the created container. Useful if you run multiple typesense containers"
+    required: false
+    default: "typesense"
+  typesense-api-key:
+    description: "typesense api key"
+    required: false
+    default: "typesense"
+
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.typesense-version }}
+    - ${{ inputs.typesense-port }}
+    - ${{ inputs.typesense-container-name }}
+    - ${{ inputs.typesense-api-key }}

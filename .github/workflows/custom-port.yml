@@ -1,0 +1,21 @@
+name: Start typesense server on custom port
+
+on: [push, pull_request]
+
+jobs:
+  typesense-action:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        typesense-version: [0.23.1]
+
+    name: Start typesense Server v${{ matrix.typesense-version }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Start typesense Server
+        uses: ./
+        with:
+          typesense-version: ${{ matrix.typesense-version }}
+          typesense-port: 12345

@@ -1,0 +1,21 @@
+name: Start Typesense server with custom container name
+
+on: [push, pull_request]
+
+jobs:
+  typesense-action:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        typesense-version: [0.23.1]
+
+    name: Start Typesense Server v${{ matrix.typesense-version }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Start Typesense Server
+        uses: ./
+        with:
+          typesense-version: ${{ matrix.typesense-version }}
+          typesense-container-name: typesense-auth-token-cache
