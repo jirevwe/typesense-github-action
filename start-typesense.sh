@@ -12,4 +12,6 @@ if [ -z "$TYPESENSE_VERSION" ]; then
 fi
 
 echo "Starting single-node Typesense instance"
-docker run -d -p $TYPESENSE_PORT:8108 --name $TYPESENSE_CONTAINER_NAME typesense/typesense:$TYPESENSE_VERSION --api-key=$TYPESENSE_API_KEY --data-dir /data --enable-cors
+
+mkdir /tmp/typesense
+docker run -d -p $TYPESENSE_PORT:8108 --name $TYPESENSE_CONTAINER_NAME -v/tmp/typesense:/data typesense/typesense:$TYPESENSE_VERSION --api-key=$TYPESENSE_API_KEY --data-dir /data --enable-cors

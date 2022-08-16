@@ -19,3 +19,6 @@ jobs:
         with:
           typesense-version: ${{ matrix.typesense-version }}
           typesense-container-name: typesense-custom
+
+      - name: Curl Typesense
+        run: sleep 10 && curl http://localhost:8108/health
