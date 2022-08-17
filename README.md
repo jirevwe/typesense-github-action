@@ -29,7 +29,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Start Typesense
-        uses: jirevwe/typesense-github-action@1.0.0
+        uses: jirevwe/typesense-github-action@v1.0.1
         with:
           typesense-version: ${{ matrix.typesense-version }}
           typesense-api-key: some-api-key
@@ -81,7 +81,7 @@ jobs:
 
     steps:
       - name: Start Typesense
-        uses: jirevwe/typesense-github-action@1.0.0
+        uses: jirevwe/typesense-github-action@v1.0.1
         with:
           typesense-version: ${{ matrix.typesense-version }}
           typesense-port: 20863
@@ -108,7 +108,7 @@ jobs:
 
     steps:
       - name: Start Typesense
-        uses: jirevwe/typesense-github-action@1.0.0
+        uses: jirevwe/typesense-github-action@v1.0.1
         with:
           typesense-version: ${{ matrix.typesense-version }}
           typesense-container-name: typesense-custom-name
